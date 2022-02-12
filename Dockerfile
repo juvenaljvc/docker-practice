@@ -9,7 +9,7 @@ WORKDIR /usr/app
 COPY /resources/package.json ./
 
 RUN apk add --update redis
-RUN apk addd --update gcc
+RUN apk add --update gcc
 
 #3 - Tell you image what to do when it starts as a container
 CMD ["redis-server"]

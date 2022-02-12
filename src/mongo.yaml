@@ -1,0 +1,28 @@
+version: '3'
+services:
+  mongo-server:
+    image: 'mongo'
+    restart: always
+    ports:
+    - 27017:27017
+    container_name: mongoserver
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=pwd
+  mongo-client:
+    image : 'mongo-express'
+    ports:
+      - 8082:8081
+    container_name: mongoclient
+    environment:
+      - ME_CONFIG_MONGOSERVER=mongodb
+      - ME_CONFIG_ROOT_USERNAME=mongoadmin
+      - ME_CONFIG_PASSWORD=secret
+
+
+
+
+
+
+
+

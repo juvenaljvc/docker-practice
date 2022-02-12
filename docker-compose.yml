@@ -3,9 +3,11 @@ services:
   redis-server:
     image: 'redis'
   node-app:
-    build: .
+    restart: always     #restart policy
+    build: .       # look for a dockerfile in the root directory of the container to build this service
     ports:
     - "8081:8081"
+    command: ["run", "npm", "start"]
 
 
 
