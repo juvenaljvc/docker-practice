@@ -11,6 +11,10 @@ docker run
 docker stop <containerID>
 docker kill <containerID>
 
+#interact inside a docker container
+docker exec -it e287ec4b7565 /bin/bash : launch  bash inside a container
+docker exec -it e287ec4b7565 sh   : launch sh inside a container
+
 #docker networks
 docker network ls
 docker network create mongo-express
